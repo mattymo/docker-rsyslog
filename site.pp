@@ -2,7 +2,7 @@ $fuel_settings = parseyaml($astute_settings_yaml)
 
 class {"::rsyslog::server":
   enable_tcp => true,
-  enable_udp => ture,
+  enable_udp => true,
   server_dir => '/var/log/',
   port       => 514,
   high_precision_timestamps => true,
