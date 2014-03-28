@@ -9,8 +9,8 @@ class {"::rsyslog::server":
   virtual    => str2bool($::is_virtual),
 }
 
-#class {"::openstack::logrotate":
-#  rotation       => 'weekly',
-#  keep           => '4',
-#  limitsize      => '100M',
-#}
+class {"::openstack::logrotate":
+  rotation       => 'weekly',
+  keep           => '4',
+  limitsize      => '100M',
+}
