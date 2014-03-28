@@ -13,7 +13,6 @@ ADD start.sh /usr/local/bin/start.sh
 ADD astute.yaml /etc/astute.yaml
 ADD site.pp /root/site.pp
 
-
 # let's disable some services and commands since we don't need them in our container
 RUN echo -e '#!/bin/bash\n#chkconfig: 345 20 80\nexit 0' > /etc/init.d/iptables
 RUN echo -e '#!/bin/bash\n#chkconfig: 345 20 80\nexit 0' > /sbin/iptables
