@@ -22,6 +22,8 @@ RUN echo -e '#!/bin/bash\n#chkconfig: 345 20 80\nexit 0' > /etc/init.d/rsyslog
 
 # we need a password for root in order to run crond
 RUN echo O9niixOT9LE4zQYp | passwd root --stdin
+# we also need to disable pam_loginuid.so for crond in order to run it inside container
+RUN sed '/pam_loginuid.so/s/^/#/g' -i /etc/pam.d/crond
 
 RUN chmod +x /etc/init.d/iptables /sbin/iptables /etc/init.d/rsyslog
 RUN chmod +x /usr/local/bin/start.sh
