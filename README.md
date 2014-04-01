@@ -10,7 +10,7 @@ cp /etc/astute.yaml ./
 # build
 docker build -t fuel/rsyslog ./
 
-# run AFTER storage-puppet
+# run AFTER storage-puppet and storage-log
 docker run \
   -h $(hostname -f) \
   -p 514:514 \
