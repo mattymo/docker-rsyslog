@@ -16,6 +16,7 @@ docker run \
   -p 514:514 \
   -p 514:514/udp \
   --volumes-from storage-puppet \
+  --volumes-from storage-log \
   -d -t \
   fuel/rsyslog
 ```
