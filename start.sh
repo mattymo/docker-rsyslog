@@ -1,5 +1,6 @@
 #!/bin/bash
 
 puppet apply -d -v /root/site.pp
-/usr/bin/supervisord -n
+
+/sbin/rsyslogd -i /var/run/syslogd.pid -c 5 -x -n
 
