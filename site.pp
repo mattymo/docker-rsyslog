@@ -1,13 +1,6 @@
 $fuel_settings = parseyaml($astute_settings_yaml)
 $fuel_version = parseyaml($fuel_version_yaml)
 
-if is_hash($::fuel_version) and $::fuel_version['VERSION'] and $::fuel_version['VERSION']['production'] {
-  $production = $::fuel_version['VERSION']['production']
-}
-else {
-  $production = 'docker-build'
-}
-
 class {"::rsyslog::server":
   enable_tcp => true,
   enable_udp => true,
