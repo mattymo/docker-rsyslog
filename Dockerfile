@@ -22,6 +22,8 @@ RUN chmod +x /etc/init.d/iptables /sbin/iptables /etc/init.d/rsyslog
 RUN chmod +x /usr/local/bin/start.sh
 RUN touch /etc/puppet/hiera.yaml
 
+RUN /usr/bin/puppet apply -d -v /root/site.pp
+
 EXPOSE 514
 
 CMD ["/usr/local/bin/start.sh"]
