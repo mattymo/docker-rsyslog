@@ -23,6 +23,7 @@ RUN touch /etc/puppet/hiera.yaml
 RUN /usr/bin/puppet apply -d -v /etc/puppet/modules/nailgun/examples/rsyslog-only.pp
 
 EXPOSE 514
+EXPOSE 514/udp
 
 ADD start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
